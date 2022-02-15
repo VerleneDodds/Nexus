@@ -12,8 +12,8 @@ RUN apk add nano
 RUN apk add curl
 RUN apk add wget
 
-RUN curl -fsSL https://get.docker.com -o get-docker.sh
-RUN sh get-docker.sh
+#RUN curl -fsSL https://get.docker.com -o get-docker.sh
+#RUN sh get-docker.sh
 
 RUN echo "#!/bin/sh" > deploy-olympiad.sh
 
