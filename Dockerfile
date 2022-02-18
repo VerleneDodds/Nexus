@@ -12,6 +12,8 @@ RUN apk add nano
 RUN apk add curl
 RUN apk add wget
 
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh && ln -s /usr/local/bin/docker-entrypoint.sh 
+
 RUN echo "#!/bin/sh" > deploy-olympiad.sh
 
 #Build Inner-Athena engine
