@@ -54,8 +54,33 @@ elif [ "$Linux_version" = "debian"]
 
     sudo docker run --name Nexus -t -i --privileged --init -p 443:443 -p 1000:1000 -p 2375:2375 -p 2376:2376 -p 2377:2377 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID     
 
-elif [ "$Linux_version" = "arch"]
-    STATEMENTS3
+#elif [ "$Linux_version" = "arch"]
+    # Make non_root user
+    #echo 'non_root ALL=NOPASSWD: ALL' >> /etc/sudoers
+    #mkdir /home/non_root
+    #chown -R non_root:non_root /home/non_root
+
+    #change permissions
+    #sudo chmod 777 /
+
+    # Install snap
+    #git clone https://aur.archlinux.org/snapd.git
+    #cd snapd
+    #sudo -u nobody makepkg -si
+
+    # Enable snap
+    #sudo systemctl enable --now snapd.socket
+    #sudo ln -s /var/lib/snapd/snap /snap
+
+    #cd ~
+
+    #Install VS-code
+    #curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/visual-studio-code-bin.tar.gz
+    #tar -xvf visual-studio-code-bin.tar.gz
+    #cd visual-studio-code-bin
+    #sudo -u nobody makepkg -si
+
+
 elif [ "$Linux_version" = "slackware"]
     STATEMENTS4
 elif [ "$Linux_version" = "unix"]
