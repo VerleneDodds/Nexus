@@ -46,5 +46,5 @@ ID=$(sudo docker images --format "{{.ID}}" --filter "dangling=true")
 
 #Deploy Nexus container
 
-sudo docker run --name Nexus -t -i --privileged -p 443:443 -p 1000:1000 -p 2375:2375 -p 2376:2376 -p 2377:2377 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID
+sudo docker run --name Nexus -t -i --privileged --init -p 443:443 -p 1000:1000 -p 2375:2375 -p 2376:2376 -p 2377:2377 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID
 
