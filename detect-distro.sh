@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Linux_version= $"grep 'fedora\|debian\|arch\|slackware\|unix' /etc/os-release"
+Linux_version= $(grep 'fedora\|debian\|arch\|slackware\|unix' /etc/os-release)
 
 
 if [[ $Linux_version = 'fedora']]
