@@ -1,12 +1,12 @@
 #!/bin/bash
 
-Linux_version= $(grep 'fedora\|debian\|arch\|slackware\|unix' /etc/os-release)
+Linux_version=$(grep -o 'fedora\|debian\|arch\|slackware\|unix' /etc/os-release)
 
 
-if [[ $Linux_version = 'fedora']]
+if [ "$Linux_version" = "fedora"]
 then
     STATEMENTS1
-elif [[ $Linux_version = 'debian']]
+elif [ "$Linux_version" = "debian"]
     # Install github-desktop      
     sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb     
     sudo apt-get install gdebi-core -y    
@@ -54,11 +54,11 @@ elif [[ $Linux_version = 'debian']]
 
     sudo docker run --name Nexus -t -i --privileged --init -p 443:443 -p 1000:1000 -p 2375:2375 -p 2376:2376 -p 2377:2377 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID     
 
-elif [[ $Linux_version = 'arch']]
+elif [ "$Linux_version" = "arch"]
     STATEMENTS3
-elif [[ $Linux_version = 'slackware']]
+elif [ "$Linux_version" = "slackware"]
     STATEMENTS4
-elif [[ $Linux_version = 'unix']]
+elif [ "$Linux_version" = "unix"]
     STATEMENTS5
 else
     echo 'Unable to detect distro version'
