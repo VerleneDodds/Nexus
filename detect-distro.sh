@@ -5,7 +5,21 @@ Linux_version=$(grep -o 'fedora\|debian\|arch\|slackware\|unix\|freebsd' /etc/os
 
 if [ "$Linux_version" = "fedora"]
 then
-    STATEMENTS1
+    # Install github-desktop      
+    sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb     
+    sudo yum install gdebi-core -y    
+    sudo gdebi GitHubDesktop-linux-2.9.3-linux3.deb -y
+
+    clear
+
+    # Install VS-code
+    sudo chmod 777 /etc/yum.repos.d/vscode.repo
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    sudo echo -e "[code] \nname=Visual Studio Code \nbaseurl=https://packages.microsoft.com/yumrepos/vscode \nenabled=1 \ngpgcheck=1 \ngpgkey=https://packages.microsoft.com/keys/microsoft.asc \nEOF" >> /etc/yum.repos.d/vscode.repo
+    sudo dnf install code
+
+    
+
 elif [ "$Linux_version" = "debian"]
     # Install github-desktop      
     sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb     
