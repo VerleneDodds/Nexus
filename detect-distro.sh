@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Linux_version=$(grep -o 'fedora\|debian\|arch\|slackware\|unix' /etc/os-release)
+Linux_version=$(grep -o 'fedora\|debian\|arch\|slackware\|unix\|freebsd' /etc/os-release | uniq)
 
 
 if [ "$Linux_version" = "fedora"]
@@ -83,7 +83,7 @@ elif [ "$Linux_version" = "debian"]
 
 elif [ "$Linux_version" = "slackware"]
     STATEMENTS4
-elif [ "$Linux_version" = "unix"]
+elif [ "$Linux_version" = "unix" || "$Linux_version" = "freebsd"]
     STATEMENTS5
 else
     echo 'Unable to detect distro version'
