@@ -7,7 +7,7 @@ if [ "$Linux_version" = "fedora"]
 then
     # Install github-desktop      
     sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb     
-    sudo dnf install gdebi-core -y    
+    sudo yum install gdebi-core -y    
     sudo gdebi GitHubDesktop-linux-2.9.3-linux3.deb -y
 
     clear
@@ -16,7 +16,7 @@ then
     sudo chown root /etc/yum.repos.d/vscode.repo
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     sudo echo -e "[code] \nname=Visual Studio Code \nbaseurl=https://packages.microsoft.com/yumrepos/vscode \nenabled=1 \ngpgcheck=1 \ngpgkey=https://packages.microsoft.com/keys/microsoft.asc " > /etc/yum.repos.d/vscode.repo
-    sudo dnf install -y code
+    sudo yum install -y code
 
     
 
