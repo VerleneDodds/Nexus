@@ -121,10 +121,10 @@ elif [ "$Linux_version" = "debian"]
     #sudo -u nobody makepkg -si
 
 
-elif [ "$Linux_version" = "slackware"]
-    STATEMENTS4
-elif [ "$Linux_version" = "unix" || "$Linux_version" = "freebsd"]
-    STATEMENTS5
+#elif [ "$Linux_version" = "slackware"]
+#    STATEMENTS4
+#elif [ "$Linux_version" = "unix" || "$Linux_version" = "freebsd"]
+#    STATEMENTS5
 else
     echo 'Unable to detect distro version'
 fi
