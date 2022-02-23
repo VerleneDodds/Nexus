@@ -7,17 +7,17 @@ sudo alien -r --scripts GitHubDesktop-linux-2.9.3-linux3.deb
 sudo rpm -i github-desktop-2.9.3-1.x86_64.rpm
 clear
 
-# Install VS-code
-sudo chown root /etc/yum.repos.d/vscode.repo
+# Install VS-codey
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo echo -e "[code] \nname=Visual Studio Code \nbaseurl=https://packages.microsoft.com/yumrepos/vscode \nenabled=1 \ngpgcheck=1 \ngpgkey=https://packages.microsoft.com/keys/microsoft.asc " > /etc/yum.repos.d/vscode.repo
+sudo chown root /etc/yum.repos.d/vscode.repo
 sudo yum install -y code
 clear
 
 # Install Docker
 sudo yum -y install dnf-plugins-core
 sudo yum config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo yum install docker-ce docker-ce-cli containerd.io
+sudo yum install -y docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
     
 clear
