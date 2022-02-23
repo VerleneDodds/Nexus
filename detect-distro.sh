@@ -7,9 +7,9 @@ if [ "$Linux_version" = "fedora"]
 then
     # Install github-desktop      
     sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb     
-    sudo yum install gdebi-core -y    
-    sudo gdebi GitHubDesktop-linux-2.9.3-linux3.deb -y
-
+    sudo dnf install -y alien
+    sudo alien GitHubDesktop-linux-2.9.3-linux3.deb
+    sudo rpm -i GitHubDesktop-linux-2.9.3-linux3.rpm
     clear
 
     # Install VS-code
