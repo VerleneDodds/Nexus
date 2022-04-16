@@ -46,7 +46,7 @@ then
     ID=$(sudo docker images --format "{{.ID}}" --filter "dangling=true")
 
     #Deploy Nexus Container
-    sudo docker run --name Nexus -t -i --privileged --init -p 1000:1000 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID
+    sudo docker run --name=Nexus -t -i --privileged --init -p 1000:1000 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID
 
 elif ["$Linux_version" = "debian"]
     #Install github-desktop      
@@ -94,7 +94,7 @@ elif ["$Linux_version" = "debian"]
 
     #Deploy Nexus container   
 
-    sudo docker run --name Nexus -t -i --privileged --init -p -p 1000:1000 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID     
+    sudo docker run --name=Nexus -t -i --privileged --init -p -p 1000:1000 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID     
 
 elif ["$Linux_version" = "arch"]
 
@@ -151,7 +151,7 @@ elif ["$Linux_version" = "arch"]
 
     #Deploy Nexus container   
 
-    sudo docker run --name Nexus -t -i --privileged --init -p -p 1000:1000 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID     
+    sudo docker run --name=Nexus -t -i --privileged --init -p -p 1000:1000 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID     
 
 
 #elif ["$Linux_version" = "slackware"]
