@@ -33,7 +33,7 @@ then
     mkdir ~/Nexus
 
     #Grab Dockerfile
-    curl https://raw.githubusercontent.com/VerleneDodds/Nexus/main/Dockerfile >> ~/Nexus/Dockerfile
+    curl https://raw.githubusercontent.com/Underground-Ops/underground-nexus/main/Dockerfile >> ~/Nexus/Dockerfile
     
     clear
 
@@ -82,7 +82,7 @@ elif ["$Linux_version" = "debian"]
     mkdir ~/Nexus     
 
     #Grab Dockerfile     
-    curl https://raw.githubusercontent.com/VerleneDodds/Nexus/main/Dockerfile >> ~/Nexus/Dockerfile   
+    curl https://raw.githubusercontent.com/Underground-Ops/underground-nexus/main/Dockerfile >> ~/Nexus/Dockerfile   
 
     #Build Dockerfile    
     sudo docker build ~/Nexus     
@@ -139,7 +139,7 @@ elif ["$Linux_version" = "arch"]
     mkdir ~/Nexus     
 
     #Grab Dockerfile     
-    curl https://raw.githubusercontent.com/VerleneDodds/Nexus/main/Dockerfile >> ~/Nexus/Dockerfile   
+    curl https://raw.githubusercontent.com/Underground-Ops/underground-nexus/main/Dockerfile >> ~/Nexus/Dockerfile   
 
     #Build Dockerfile    
     sudo docker build ~/Nexus     
