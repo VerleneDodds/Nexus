@@ -10,6 +10,7 @@ then
     sudo yum install -y alien
     sudo alien -r --scripts GitHubDesktop-linux-2.9.3-linux3.deb
     sudo rpm -i github-desktop-2.9.3-1.x86_64.rpm
+    
     clear
 
     #Install VS-code
@@ -17,6 +18,7 @@ then
     sudo echo -e "[code] \nname=Visual Studio Code \nbaseurl=https://packages.microsoft.com/yumrepos/vscode \nenabled=1 \ngpgcheck=1 \ngpgkey=https://packages.microsoft.com/keys/microsoft.asc " > /etc/yum.repos.d/vscode.repo
     sudo chown root /etc/yum.repos.d/vscode.repo
     sudo yum install -y code
+    
     clear
 
     #Install Docker
@@ -24,7 +26,7 @@ then
     sudo yum config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
     sudo yum install -y docker-ce docker-ce-cli containerd.io
     sudo systemctl start docker
-        
+    
     clear
 
     #Make Nexus folder
@@ -32,12 +34,12 @@ then
 
     #Grab Dockerfile
     curl https://raw.githubusercontent.com/VerleneDodds/Nexus/main/Dockerfile >> ~/Nexus/Dockerfile
-
+    
     clear
 
     #Build Dockerfile
     sudo docker build ~/Nexus
-
+    
     clear
 
     #Get Image ID
