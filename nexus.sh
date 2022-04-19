@@ -18,7 +18,7 @@ then
     sudo echo -e "[code] \nname=Visual Studio Code \nbaseurl=https://packages.microsoft.com/yumrepos/vscode \nenabled=1 \ngpgcheck=1 \ngpgkey=https://packages.microsoft.com/keys/microsoft.asc " > /etc/yum.repos.d/vscode.repo
     sudo chown root /etc/yum.repos.d/vscode.repo
     sudo yum install -y code
-    
+
     clear
 
     #Install Docker
@@ -31,6 +31,7 @@ then
 
     #Make Nexus folder
     mkdir ~/Nexus
+    
     clear
 
     #Build Dockerfile
@@ -151,6 +152,7 @@ then
 
     sudo docker run --name=Nexus -t -i --privileged --init -p -p 1000:1000 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID     
 
+ 
 else
     echo 'Unable to detect distro version'
 fi
