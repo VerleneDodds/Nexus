@@ -151,26 +151,6 @@ then
 
     sudo docker run --name=Nexus -t -i --privileged --init -p -p 1000:1000 -p 9443:9443 -v /var/run -v /var/lib/docker/volumes $ID     
 
-
-#elif [$Linux_version = slackware"]
-#    STATEMENTS4
-elif [ $Linux_version = freebsd ]
-then
-
-    #Put username into variable
-    USERNAME=$(whoami)
-
-    #Update repositories
-    freebsd-update fetch 
-    
-    #Install docker 
-    pkg install -y docker docker-machine virtualbox-ose 
-    pw groupmod vboxuser -m $USERNAME
-    docker-machine create -d virtualbox default
-    eval "$(docker-machine env default)"
-
-
-    
 else
     echo 'Unable to detect distro version'
 fi
