@@ -3,13 +3,13 @@
 To start, either download the script by hand and then run
 
 ```bash
-sudo chmod +x detect-distro.sh && sudo ./detect-distro.sh
+sudo chmod +x nexus.sh && sudo ./nexus.sh
 ```
 
 Or you can use curl to download the script and run it
 
 ```bash
-curl https://raw.githubusercontent.com/VerleneDodds/Nexus/main/detect-distro.sh > detect-distro.sh && sudo chmod +x detect-distro.sh && sudo ./detect-distro.sh
+curl https://raw.githubusercontent.com/VerleneDodds/Nexus/main/detect-distro.sh > nexus.sh && sudo chmod +x nexus.sh && sudo ./nexus.sh
 ```
 
 Now to have the service fully up you will need to open another terminal and type the following command
